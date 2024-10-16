@@ -2,13 +2,14 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import { myStudioApiToken, myStudioDataset, myStudioProjectId, myStudioTitle } from './lib/enviroments'
 
 export default defineConfig({
-  name: 'default',
-  title: 'Hälsokollen',
-
-  projectId: 'x1d4c2wj',
-  dataset: 'production',
+  name: 'examensarbete-backend',
+  title: myStudioTitle,
+  projectId: myStudioProjectId || 'defaultProjectId',
+  dataset: myStudioDataset || 'production',
+  apiToken: myStudioApiToken,
 
   plugins: [structureTool(), visionTool()],
 

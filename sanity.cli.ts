@@ -1,9 +1,10 @@
 import {defineCliConfig} from 'sanity/cli'
+import { myStudioDataset, myStudioProjectId } from './lib/enviroments'
 
 export default defineCliConfig({
   api: {
-    projectId: 'x1d4c2wj',
-    dataset: 'production'
+    projectId: myStudioProjectId,
+    dataset: myStudioDataset,
   },
   /**
    * Enable auto-updates for studios.
